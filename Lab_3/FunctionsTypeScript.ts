@@ -61,7 +61,7 @@ type Canvas = {
 	color: string, // white
 	object: MainObject[] | null,
 	filter?: Filter, //"Red"
-	listObj?: number[] // Массив разных IDObj (Img Txt Art)
+	listObj: number[] // Массив разных IDObj (Img Txt Art)
 };
 
 type Filter = {
@@ -74,7 +74,7 @@ type Filter = {
 const blueFilter: Filter = {nameFilter: "Blue", colorFilter: "blue", transparency: 10};
 const whiteFilter: Filter  = {nameFilter: "White", colorFilter: "white", transparency: 10}
 const yellowFilter: Filter = {nameFilter: "Yellow", colorFilter: "yellow", transparency: 10};
-const defaultCanvas: Canvas = {size: {height: 800, width: 600}, color: "white", object: null, filter: whiteFilter}; //Как указать, чти
+const defaultCanvas: Canvas = {size: {height: 800, width: 600}, color: "white", object: null, filter: whiteFilter, listObj: []}; //Как указать, чти
 //const defaultText: TextObj = {objType:"text",objId: 3, size: {height: 20, width: 60}, position: {X: 10, Y: 10}, transparency: 10,  content: "", color: "black", font: "Arial", fontSize: 14};
 const listFilter: Filter[] = [blueFilter, yellowFilter, whiteFilter];
 //Canvas
@@ -121,12 +121,12 @@ function editFilterCanvas(canvas: Canvas, newNameFilter: string): Canvas
 
 //MainObject
 
-function editObjPosition(canvas: Canvas, object: MainObject): MainObject
+function editObjPosition(canvas: Canvas, object: MainObject): Canvas
 {
 
     return {
         ...canvas,
-        listObj: [...canvas.listObj, object.id]
+        listObj: [...canvas.listObj, object.objId]
     }
 
 };
@@ -137,13 +137,13 @@ function editObjSize(object: MainObject, newSize: Size): MainObject
         size: newSize,
     }
 };
-function deleteObject(canvas: Canvas, object: MainObject): MainObject
+function deleteObject(canvas: Canvas, object: MainObject): Canvas
 {
-	let foo_object // Item to remove
-	this.foo_objects = this.foo_objects.filter(obj => obj !== foo_object);
+	//let foo_object // Item to remove
+	//this.foo_objects = this.foo_objects.filter(obj => obj !== foo_object);
     return {
         ...canvas,
-        listObj: canvas.listObj.filter(element => element != object.id)
+        listObj: canvas.listObj.filter(element => element != object.objId)
     };
 };
 
