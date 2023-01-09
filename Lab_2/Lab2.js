@@ -20,7 +20,7 @@ const Filter3 = {
 
 const Obj = {
 	objType: null, 
-	indexLayer: 3, 
+	objId: 3, 
 	height: 30,
 	width: 40,
 	X: 10,
@@ -30,15 +30,15 @@ const Obj = {
 
 const Text = {
 	...Obj,
+	objId: 3,
 	font: "Arial", 
 	fontSize: 16,
 	color: "blue",
-	fontWeight: "bold",
+	content: "Hello",
 };
 
 const Picture = {
 	...Obj,
-	resolution: "jpeg", 
 	path: "dinosaur.jpg", 
 };
 
@@ -78,5 +78,77 @@ const CardMaker = {
 	//selectObj(), 
 	//selectArea(),
 	//tools
+};
+
+function createCanvas(cardMaker, height, width)
+{
+
+};
+function editBackgroundCanvas(cardMaker, color)
+{
+
+};
+function editFilterCanvas(cardMaker, filter)
+{
+
+//Object
+
+};
+function editObjPosition(cardMaker, objId)
+{
+
+};
+function editObjSize(cardMaker, objId, height, width)
+{
+
+};
+function deleteObject(cardMaker, objId)
+{
+
+};
+
+//Text
+
+function addTextObj(cardMaker, objId, font, color, content)
+{
+
+};
+
+function editContentObjText(cardMaker, objId, content)
+{
+
+};
+
+function editColorObjText(cardMaker, objId, color)
+{
+
+};
+
+function editFontObjTxt(cardMaker, objId, font)
+{
+};
+
+function editFontSizeObjText(cardMaker, objId, fontSize)
+{
+
+};
+
+//Image
+
+function addImageObj(cardMaker, objId, source)
+{
+
+};
+
+//Art
+
+function addObjArt(cardMaker, objId, source, color)
+{
+
+};
+
+function selectObj(cardMaker, objId)
+{
+
 };
 
